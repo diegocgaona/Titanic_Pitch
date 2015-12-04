@@ -1,0 +1,13235 @@
+---
+title       : Titanic Shiny App Pitch
+subtitle    : A Course Project
+author      : Diego Gaona
+job         : Data Science Coursera - Developing Data Products
+framework   : revealjs        # {io2012, html5slides, shower, dzslides, revealjs ...}
+revealjs    : {transition: fade, center: "false"} # none/fade/slide/convex/concave/zoom} 
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : moon # Sky - Beige - Simple - Serif - Night - Default - Solarized - Moon
+widgets     : []            # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: libraries/nvd3}
+mode        : selfcontained # {standalone, draft, selfcontained}
+knit        : slidify::knit2slides
+---
+
+
+## Titanic Survival Probabilities
+<div style="text-align: center;align=center">
+<p>A Course Project for Developing Data Products<br>
+From Coursera and Johns Hopkins University</p><br><br><br>
+</div>
+<h3>Creator</h3>
+<h2><a href="https://linkedin.com/in/diegocgaona">Diego Gaona</a></h2>
+
+--- .class #intro 
+
+## Introduction
+<div style="text-align: left;">
+<p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. </p><br>
+<p>On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew.</p><br>
+<p>This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
+
+</div>
+
+--- .class #plot1
+
+## Exploration
+<div style="text-align: left;">
+In this plot we see the deaths related to age and ticket fare, some of the variable which infuenced the chance of surviving. 
+</div>
+<div style="background:#cccccc;">
+<link rel='stylesheet' href=//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.css>
+<script type='text/javascript' src=//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js></script>
+<script type='text/javascript' src=//d3js.org/d3.v3.min.js></script>
+<script type='text/javascript' src=//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.js></script>
+<script type='text/javascript' src=//nvd3.org/assets/lib/fisheye.js></script> 
+ <style>
+  .rChart {
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    width: 960px;
+    height: 650px;
+  }  
+  </style>
+<div id = 'chart17542f53fd7' class = 'rChart nvd3'></div>
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart17542f53fd7()
+    });
+    function drawchart17542f53fd7(){  
+      var opts = {
+ "dom": "chart17542f53fd7",
+"width":    960,
+"height":    650,
+"x": "Age",
+"y": "Ticket_Fare",
+"group": "Life",
+"type": "scatterChart",
+"id": "chart17542f53fd7" 
+},
+        data = [
+ {
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":        71.2833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         8.4583,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":        51.8625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 2,
+"Ticket_Fare":         21.075,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":        11.1333,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 14,
+"Ticket_Fare":        30.0708,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 4,
+"Ticket_Fare":           16.7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 58,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 14,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 55,
+"Ticket_Fare":             16,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 2,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":             18,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 15,
+"Ticket_Fare":         8.0292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           35.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 8,
+"Ticket_Fare":         21.075,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Sir" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":       146.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 66,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        82.1708,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":             18,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 14,
+"Ticket_Fare":        11.2417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":          9.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 3,
+"Ticket_Fare":        41.5792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        21.6792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":           17.8,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":            7.8,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 49,
+"Ticket_Fare":        76.7292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 65,
+"Ticket_Fare":        61.9792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           35.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 5,
+"Ticket_Fare":          27.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 11,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":             80,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":         83.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 4,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":         8.1583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":             29,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":         12.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":              9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7875,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           47.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":          15.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":         34.375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":         61.175,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         20.575,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 59,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 71,
+"Ticket_Fare":        34.6542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":        63.3583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 34,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":        77.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         8.6542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 14,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":          9.825,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":        14.4583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 70,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":       247.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":        30.0708,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 32,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":        77.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 12,
+"Ticket_Fare":        11.2417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         7.1417,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":        22.3583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":          6.975,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 47,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":        15.0458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":        26.2833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":         9.2167,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":          15.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           6.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":          36.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 9,
+"Ticket_Fare":         34.375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Rev" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":         12.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           66.6,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 55,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.3125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":        61.3792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":          15.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 1,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 9,
+"Ticket_Fare":         20.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":             55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":         25.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 61,
+"Ticket_Fare":           33.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 4,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 1,
+"Ticket_Fare":        11.1333,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 56,
+"Ticket_Fare":        30.6958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        25.4667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":        28.7125,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":          15.05,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 9,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 1,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 4,
+"Ticket_Fare":         22.025,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             50,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 32,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 3,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 44,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 58,
+"Ticket_Fare":       146.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":         8.4042,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":         6.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":        10.4625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          15.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":        18.7875,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":             31,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":        113.275,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             27,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 32,
+"Ticket_Fare":        76.2917,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":             90,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           9.35,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":        25.4667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":         83.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 59,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 5,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 8,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         12.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":          7.125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":             90,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Dr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":        52.5542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Rev" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":        10.4625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 62,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 41,
+"Ticket_Fare":        20.2125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":           86.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":       512.3292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 3,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 52,
+"Ticket_Fare":          79.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 58,
+"Ticket_Fare":       153.4625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":       135.6333,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             31,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 41,
+"Ticket_Fare":           19.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":           29.7,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 63,
+"Ticket_Fare":        77.9583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":          20.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 65,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":          78.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":        91.0792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":         12.875,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           8.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":       247.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          23.25,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":          12.35,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":       110.8833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":          108.9,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             24,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":        56.9292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":             14,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Dr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":       164.8667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":          134.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":          12.35,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":             29,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":       135.6333,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 61,
+"Ticket_Fare":         6.2375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":         20.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":        57.9792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":          23.25,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":           28.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":       153.4625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":             18,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":         133.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":           66.6,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 41,
+"Ticket_Fare":          134.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":           35.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 2,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 3,
+"Ticket_Fare":           15.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":          9.225,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             35,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 15,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           17.8,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":             55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 60,
+"Ticket_Fare":          75.25,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           69.3,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mlle" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":        55.4417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         6.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":       135.6333,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 3,
+"Ticket_Fare":         21.075,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        82.1708,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":          211.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         4.0125,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        227.525,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 1,
+"Ticket_Fare":        15.7417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 1,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.7292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":             12,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":            120,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":        113.275,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           16.7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Dr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":          12.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":          9.825,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          15.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 3,
+"Ticket_Fare":          18.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":        25.4667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         6.8583,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":             90,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 34,
+"Ticket_Fare":           32.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 10,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":          7.875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           14.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":        20.2125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":          7.125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":           55.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 14,
+"Ticket_Fare":            120,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":         34.375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":          18.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 64,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Ms" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         8.1125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 4,
+"Ticket_Fare":        81.8583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 13,
+"Ticket_Fare":           19.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 5,
+"Ticket_Fare":        19.2583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 52,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Sir" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":          27.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        19.9667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":          27.75,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":        89.1042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 65,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        51.8625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":           38.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 56,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.725,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 0,
+"Ticket_Fare":        19.2583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":          27.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":        13.7917,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         9.8375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":         7.0458,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.5208,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":        12.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 9,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 63,
+"Ticket_Fare":         9.5875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":        91.0792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":        25.4667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":             90,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 58,
+"Ticket_Fare":           29.7,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 9,
+"Ticket_Fare":           15.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        19.9667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 55,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 71,
+"Ticket_Fare":        49.5042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        14.4583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 54,
+"Ticket_Fare":        78.2667,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           15.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.6292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 37,
+"Ticket_Fare":         9.5875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":           86.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":          108.9,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         22.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":        26.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 54,
+"Ticket_Fare":           59.4,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         7.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":        34.0208,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 34,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":           93.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 44,
+"Ticket_Fare":        57.9792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":       221.7792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        22.3583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Sir" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":        106.425,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           49.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":             71,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 9,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 11,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":        106.425,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 64,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":        13.8625,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         20.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 8,
+"Ticket_Fare":          36.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":       110.8833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 62,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":           39.6,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Lady" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        227.525,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":          79.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":           17.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":         21.075,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 62,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 53,
+"Ticket_Fare":        51.4792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":        26.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 34,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":           55.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        14.4583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":       110.8833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":         40.125,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         8.7125,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          79.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":             15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 60,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":          7.125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 52,
+"Ticket_Fare":        78.2667,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":             33,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":        56.9292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Sir" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             27,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           42.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":          15.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        41.5792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":       153.4625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":           14.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 4,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        52.5542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":        15.7417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 61,
+"Ticket_Fare":        32.3208,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 57,
+"Ticket_Fare":          12.35,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":        77.9583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 80,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":         7.0542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Dr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 9,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 41,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           69.3,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mlle" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 0,
+"Ticket_Fare":        19.2583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":        76.7292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 56,
+"Ticket_Fare":           35.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Col" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         8.4333,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.8292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":           6.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 32,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 58,
+"Ticket_Fare":        113.275,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":         133.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Dr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":        25.5875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":         7.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 40,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 70,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":         9.8417,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 43,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":       512.3292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         8.1375,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":        76.7292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":          9.225,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 14,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 60,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":        41.5792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 14,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":        10.1708,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 15,
+"Ticket_Fare":       211.3375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":             57,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 4,
+"Ticket_Fare":        13.4167,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 60,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Col" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 52,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":       110.8833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":        227.525,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":        26.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":         7.7417,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        26.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":        49.5042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mlle" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":         9.4833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 52,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":        227.525,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 6,
+"Ticket_Fare":             33,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         7.0542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7375,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":       211.3375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 11,
+"Ticket_Fare":        18.7875,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":         34.375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":       512.3292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":          78.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 70,
+"Ticket_Fare":             71,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Sir" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":          20.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 4,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 6,
+"Ticket_Fare":         12.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":             65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":           86.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Lady" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":          7.125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":            120,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 51,
+"Ticket_Fare":        77.9583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           39.6,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Dr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":         8.3625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 57,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 54,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 5,
+"Ticket_Fare":         12.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.7375,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 43,
+"Ticket_Fare":       211.3375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 13,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":             57,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          23.45,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":         7.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 8,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 1,
+"Ticket_Fare":         20.575,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        30.6958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 49,
+"Ticket_Fare":        25.9292,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Dr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":         8.6833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":          26.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 11,
+"Ticket_Fare":            120,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":         8.5167,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":          6.975,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 6,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":        37.0042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":           6.45,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 10,
+"Ticket_Fare":           27.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 52,
+"Ticket_Fare":           93.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Lady" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":         12.475,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 2,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           6.95,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 1,
+"Ticket_Fare":        37.0042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 62,
+"Ticket_Fare":             80,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 15,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":          18.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":            8.3,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           29.7,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 16,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":             31,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":         6.4375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":             33,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        89.1042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 4,
+"Ticket_Fare":         31.275,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 74,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 9,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":           39.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 44,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":           9.35,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":       164.8667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 51,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":        19.2583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":        14.1083,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":        25.9292,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":        13.8583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":        50.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 4,
+"Ticket_Fare":        11.1333,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 47,
+"Ticket_Fare":        52.5542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":              5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":              9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":             24,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 15,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         9.8458,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 56,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        10.5167,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 7,
+"Ticket_Fare":          23.45,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":         7.8292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 47,
+"Ticket_Fare":              7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 62,
+"Ticket_Fare":         9.6875,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        12.2875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 14,
+"Ticket_Fare":          9.225,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":         7.6292,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":             29,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          24.15,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":        82.2667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 63,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 47,
+"Ticket_Fare":         61.175,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":          12.35,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 55,
+"Ticket_Fare":           59.4,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 9,
+"Ticket_Fare":         3.1708,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        31.6833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":        61.3792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        61.9792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":           30.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        21.6792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           31.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":         20.575,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":          23.45,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":          57.75,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        56.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":        13.4167,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":           7.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":        52.5542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":           29.7,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 60,
+"Ticket_Fare":        76.2917,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":           15.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":             60,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":        15.0333,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":        15.5792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 10,
+"Ticket_Fare":         29.125,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 35,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":          7.725,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 13,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":           42.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":        28.5375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 60,
+"Ticket_Fare":            263,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "6",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":          211.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          211.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 55,
+"Ticket_Fare":           25.7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 6,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 67,
+"Ticket_Fare":       221.7792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":        10.7083,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Ms" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 2,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           13.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":             52,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 76,
+"Ticket_Fare":          78.85,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 43,
+"Ticket_Fare":        55.4417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":         8.5167,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         22.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.8208,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         8.7125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":        15.0458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":        31.6792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":         7.2833,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 63,
+"Ticket_Fare":       221.7792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         6.4375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 1,
+"Ticket_Fare":           16.7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":        75.2417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 12,
+"Ticket_Fare":          15.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":          57.75,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":          23.25,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 53,
+"Ticket_Fare":           28.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Col" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        25.4667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         6.4375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 10,
+"Ticket_Fare":           46.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "8",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 61,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":             18,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        51.8625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 60,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":        12.1833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 13,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":       221.7792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":         13.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":              7,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Rev" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":         22.025,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 48,
+"Ticket_Fare":        50.4958,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         34.375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 42,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         8.9625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           13.9,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 15,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":          36.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 54,
+"Ticket_Fare":        55.4417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 36,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 64,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 37,
+"Ticket_Fare":        83.1583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":           53.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 27,
+"Ticket_Fare":       247.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":             16,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 34,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 11,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 61,
+"Ticket_Fare":          12.35,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 8,
+"Ticket_Fare":           32.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 6,
+"Ticket_Fare":          134.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":         8.1125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":           14.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":        227.525,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Col" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 8,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":        25.7417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 35,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 33,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":         22.525,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 60,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           42.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 57,
+"Ticket_Fare":       164.8667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 50,
+"Ticket_Fare":          211.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":        13.8583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 53,
+"Ticket_Fare":        27.4458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":         7.7958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":           15.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 14,
+"Ticket_Fare":             65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 21,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         6.4958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":        71.2833,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 64,
+"Ticket_Fare":          75.25,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":        106.425,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 55,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":             30,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 45,
+"Ticket_Fare":          134.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":          23.45,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 41,
+"Ticket_Fare":        51.8625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           32.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":        14.4542,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 0,
+"Ticket_Fare":          27.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":          7.925,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":       136.7792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":          9.325,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":           17.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 29,
+"Ticket_Fare":             23,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 1,
+"Ticket_Fare":        12.1833,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":        12.7375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":        75.2417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 26,
+"Ticket_Fare":       136.7792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           15.5,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 20,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 40,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 23,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":         13.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 9,
+"Ticket_Fare":        15.2458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 2,
+"Ticket_Fare":        20.2125,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":        82.2667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 42,
+"Ticket_Fare":           39.6,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":           6.95,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 53,
+"Ticket_Fare":        81.8583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Dr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 36,
+"Ticket_Fare":            9.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 1,
+"Ticket_Fare":        41.5792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        21.6792,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":           45.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":        15.0458,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 64,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":         151.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 0,
+"Ticket_Fare":           9.35,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 55,
+"Ticket_Fare":           93.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":        14.1083,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.575,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 37,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 55,
+"Ticket_Fare":       135.6333,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 17,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 57,
+"Ticket_Fare":       146.5208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 19,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         7.8542,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":           31.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":          26.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":       211.3375,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           7.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 12,
+"Ticket_Fare":             39,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 46,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":          36.75,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":           29.7,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          7.225,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":        15.7417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         7.8958,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 30,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 39,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           31.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 32,
+"Ticket_Fare":         7.5792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 58,
+"Ticket_Fare":       512.3292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 16,
+"Ticket_Fare":           7.65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 38,
+"Ticket_Fare":         7.2292,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           13.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":        63.3583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 25,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 18,
+"Ticket_Fare":           73.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":             65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 0,
+"Ticket_Fare":         20.575,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":             26,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 59,
+"Ticket_Fare":        51.4792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":          15.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 14,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Master" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":        37.0042,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 27,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 25,
+"Ticket_Fare":        55.4417,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":          69.55,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "11",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":        14.4583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":        39.6875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":           59.4,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":        13.8583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 31,
+"Ticket_Fare":          134.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 49,
+"Ticket_Fare":              0,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 44,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 54,
+"Ticket_Fare":        81.8583,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 45,
+"Ticket_Fare":        262.375,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         8.6625,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           11.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 55,
+"Ticket_Fare":             50,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 5,
+"Ticket_Fare":        31.3875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "7",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 26,
+"Ticket_Fare":         7.8792,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":           14.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 19,
+"Ticket_Fare":           16.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 33,
+"Ticket_Fare":         12.875,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Female",
+"Age": 24,
+"Ticket_Fare":             65,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "4",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 57,
+"Ticket_Fare":             13,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 21,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 6,
+"Ticket_Fare":         21.075,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           93.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 51,
+"Ticket_Fare":           39.4,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 13,
+"Ticket_Fare":          20.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 47,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 29,
+"Ticket_Fare":         22.025,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "5",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 18,
+"Ticket_Fare":             60,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 24,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 48,
+"Ticket_Fare":           79.2,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mrs" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 22,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 31,
+"Ticket_Fare":         7.7333,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 30,
+"Ticket_Fare":       164.8667,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":             21,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           59.4,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 17,
+"Ticket_Fare":           47.1,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 43,
+"Ticket_Fare":        27.7208,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 20,
+"Ticket_Fare":        13.8625,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "2nd",
+"Gender": "Male",
+"Age": 23,
+"Ticket_Fare":           10.5,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "1st",
+"Gender": "Male",
+"Age": 50,
+"Ticket_Fare":          211.5,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":         7.7208,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 3,
+"Ticket_Fare":         13.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 22,
+"Ticket_Fare":           7.75,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 37,
+"Ticket_Fare":             90,
+"Port_of_Embarkation": "Queenstown",
+"Number_of_Family_Members_Aboard": "2",
+"Title": "Mrs" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Female",
+"Age": 28,
+"Ticket_Fare":          7.775,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Miss" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "1st",
+"Gender": "Female",
+"Age": 39,
+"Ticket_Fare":          108.9,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Lady" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 38,
+"Ticket_Fare":           7.25,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Casualty",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 28,
+"Ticket_Fare":           8.05,
+"Port_of_Embarkation": "Southampton",
+"Number_of_Family_Members_Aboard": "1",
+"Title": "Mr" 
+},
+{
+ "Life": "Survived",
+"Ticket_Class": "3rd",
+"Gender": "Male",
+"Age": 7,
+"Ticket_Fare":        22.3583,
+"Port_of_Embarkation": "Cherbourg",
+"Number_of_Family_Members_Aboard": "3",
+"Title": "Master" 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        chart.xAxis
+  .axisLabel("Age")
+
+        
+        
+        chart.yAxis
+  .axisLabel("Ticket Fare")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+</div>
+
+--- .class #challenge
+
+## The challenge
+<div style="text-align: left;">
+<p>My challenge, is to do a analysis of what sorts of people were likely to survive. Using machine learning models to predict how much chance each type of passanger has to survive.</p><br>
+
+<p>This work is based on Kaggle Titanic: Machine Learning from Disaster competition and The Kaggle R Tutorial on Machine Learning from DataCamp</p>
+</div>
+
+--- .class #app
+
+## The Shiny App
+<div style="text-align: left;">
+<p>To show how this works, I made a App, running on Shinyapp.io servers, is very easy to use and you can try to change the variables and see the results.</p><br>
+
+<p>Who have more chances to surive?</p>
+
+<p>Try the app on: <a href="https://diegogaona.shinyapps.io/titanic_project">Titanic Project App</a></p>
+</div>
+!['Shiny App']("/img/print.jpg")
