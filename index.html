@@ -44,9 +44,8 @@ From Coursera and Johns Hopkins University</p><br><br><br>
   
 </section>
 <section class='class' data-state='' id='intro'>
-  <h2>Introduction</h2>
+  <h2>The sinkinng of the RMS Titanic</h2>
   <div style="text-align: left;">
-<p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. </p><br>
 <p>On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew.</p><br>
 <p>This sensational tragedy shocked the international community and led to better safety regulations for ships.</p>
 
@@ -55,7 +54,7 @@ From Coursera and Johns Hopkins University</p><br><br><br>
   
 </section>
 <section class='class' data-state='' id='plot1'>
-  <h2>Exploration</h2>
+  <h2>A Little Data Visualization</h2>
   <div style="text-align: left;">
 In this plot we see the deaths related to age and ticket fare, some of the variable which infuenced the chance of surviving. 
 </div>
@@ -13225,12 +13224,15 @@ In this plot we see the deaths related to age and ticket fare, some of the varia
         
         chart.yAxis
   .axisLabel("Ticket Fare")
-      
+  chart
+  .color(['purple', '#13daec']);
+        
        d3.select("#" + opts.id)
         .append('svg')
         .datum(data)
         .transition().duration(500)
         .call(chart);
+
 
        nv.utils.windowResize(chart.update);
        return chart;
@@ -13242,17 +13244,17 @@ In this plot we see the deaths related to age and ticket fare, some of the varia
   
 </section>
 <section class='class' data-state='' id='challenge'>
-  <h2>The challenge</h2>
+  <h2>The Machine Learning Challenge</h2>
   <div style="text-align: left;">
 <p>My challenge, is to do a analysis of what sorts of people were likely to survive. Using machine learning models to predict how much chance each type of passanger has to survive.</p><br>
 
-<p>This work is based on Kaggle Titanic: Machine Learning from Disaster competition and The Kaggle R Tutorial on Machine Learning from DataCamp</p>
+<p>This work is based on <a href="https://www.kaggle.com/c/titanic">Kaggle Titanic: Machine Learning from Disaster competition</a> and <a href="https://www.datacamp.com/courses/kaggle-tutorial-on-machine-learing-the-sinking-of-the-titanic">The Kaggle R Tutorial on Machine Learning from DataCamp</a></p>
 </div>
 
   
 </section>
 <section class='class' data-state='' id='app'>
-  <h2>The Shiny App</h2>
+  <h2>Presenting The Shiny App</h2>
   <div style="text-align: left;">
 <p>To show how this works, I made a App, running on Shinyapp.io servers, is very easy to use and you can try to change the variables and see the results.</p><br>
 
